@@ -30,15 +30,15 @@
       text-align: center;
     }
 
+    .pixel {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
     h2 {
       font-size: 16px;
       margin-bottom: 16px;
       text-shadow: 0 0 8px #00ffea;
-    }
-
-    .pixel {
-      font-size: 32px;
-      margin-bottom: 10px;
     }
 
     input {
@@ -100,16 +100,13 @@
       }
 
       /* =========================
-         INIT DATA (TIDAK KETIMPA)
+         INIT USER (RESET DATA)
       ========================== */
       initUserData() {
-        if (!localStorage.getItem("gameUsers")) {
-          const users = [
-            { username: "admin", password: "54321" },
-            { username: "user", password: "lola123" }
-          ];
-          localStorage.setItem("gameUsers", JSON.stringify(users));
-        }
+        const users = [
+          { username: "Lola231", password: "12354" }
+        ];
+        localStorage.setItem("gameUsers", JSON.stringify(users));
       }
 
       getUsers() {
@@ -139,7 +136,6 @@
       login() {
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value.trim();
-
         const users = this.getUsers();
 
         const valid = users.some(
